@@ -11,7 +11,14 @@ class UsersController extends \BaseController {
 
   public function create()
   {
-    return View::make('users.create');
+    if (Auth::check())
+    {
+      return Redirect::to('/');
+    }
+    else
+    {
+      return View::make('users.create');
+    }
   }
 
   public function store()
@@ -42,7 +49,9 @@ class UsersController extends \BaseController {
 
   public function profile()
   {
-    return View::make('users.profile');
+    if (Auth::check())
+      return View::make('users.profile');
+    else
+      return Redirect::to('/login');
   }
-
 }

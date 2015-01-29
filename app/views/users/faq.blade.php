@@ -39,9 +39,7 @@
       <h1> How can I change the information in my profile? </h1>
       <p> It is your responsibility to keep the information in your profile up-to-date. You should
         especially ensure that your email address is kepy current. You can alter any of the fields
-        in your profile, except your username. Once you have registered your username, it becomes
-        yours for life. In extreme circumstances, you may request that the administrator change
-        your username, but he or she will require a very good reason to do so. </p>
+        in your profile. </p>
 
 
 

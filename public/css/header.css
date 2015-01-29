@@ -53,6 +53,25 @@
   width: 100px
 }
 
+#createNewUserInput{
+  display: inline-block;
+  float: center;
+  width: 150px;
+}
+
+#createNewUserPage{
+  width: 100%;
+  height: 30px;
+}
+
+#createNewUser{
+  display: inline-block;
+  float:center;
+  width: 100px;
+  clear:left;
+  text-align: left;
+}
+
 body {
   font-family:Arial, Helvetica, sans-serif;
   background-color: #000000;
@@ -88,4 +107,30 @@ body {
 #titles{
   text-decoration: underline;
   font-weight: bold;
+}
+
+#profile{
+  width: 100%;
+}
+
+#profile ul{
+  list-style: none;
+}
+
+#profile ul li{
+  float:left;
+  display:block;
+  width:100%;
+}
+
+#profile ul li a{
+  color:#fff;
+  text-decoration: none;
+}
+
+#change{
+  width:100%;
+  float:center;
+  padding: 50px;
+  padding-top: 200px;
 }

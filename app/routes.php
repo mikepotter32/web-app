@@ -11,4 +11,7 @@ Route::get('/login', 'SessionsController@create');
 Route::get('/logout', 'SessionsController@destroy');
 Route::resource('sessions', 'SessionsController');
 
-Route::resource('users.questions', 'QuestionsController');
+Route::resource('questions', 'QuestionsController');
+Route::get('username', 'QuestionsController@username');
+Route::get('/email', 'QuestionsController@email');
+Route::get('/password', 'QuestionsController@password');

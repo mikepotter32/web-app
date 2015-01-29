@@ -2,38 +2,45 @@
 
 class QuestionsController extends \BaseController {
 
-  public function index()
-  {
-
-  }
-
-  public function create()
-  {
-
-  }
-
   public function store()
   {
+    if (Input::get('username'))
+    {
+      Auth::user()->username = Input::get('username');
+      Auth::user()->push();
 
+      return Redirect::to('/logout');
+    }
+    else if (Input::get('email'))
+    {
+      Auth::user()->email = Input::get('email');
+      Auth::user()->push();
+
+      return Redirect::to('/profile');
+    }
+    else if (Input::get('password'))
+    {
+      Auth::user()->password = Hash::make(Input::get('password'));
+      Auth::user()->push();
+
+      return Redirect::to('/logout');
+    }
   }
 
-  public function show($username, $questionId)
+
+  public function username()
   {
-    return 'Display question with id of ' .$questionId . ' that is associated with the user with a username of ' .$username;
+    return View::make('questions.username');
   }
 
-  public function edit($id)
+  public function email()
   {
-
+    return View::make('questions.email');
   }
 
-  public function update($id)
+  public function password()
   {
-
+    return View::make('questions.password');
   }
 
-  public function delete($id)
-  {
-
-  }
 }
