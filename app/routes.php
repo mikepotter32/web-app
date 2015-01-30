@@ -6,6 +6,7 @@ Route::get('/about', 'UsersController@about');
 Route::get('/faq', 'UsersController@faq');
 Route::get('/create', 'UsersController@create');
 Route::get('/profile', 'UsersController@profile');
+Route::get('/forum', 'UsersController@forum');
 
 Route::get('/login', 'SessionsController@create');
 Route::get('/logout', 'SessionsController@destroy');

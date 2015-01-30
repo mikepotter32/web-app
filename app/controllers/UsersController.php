@@ -9,6 +9,11 @@ class UsersController extends \BaseController {
     $this->user = $user;
   }
 
+  public function forum()
+  {
+    return View::make('users.forum');
+  }
+
   public function create()
   {
     if (Auth::check())
