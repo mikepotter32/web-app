@@ -7,17 +7,20 @@ class SessionsController extends BaseController {
     return View::make('sessions.create');
   }
 
-
   public function store()
   {
     if (Auth::attempt(Input::only('username', 'password')))
     {
       return Redirect::to('/');
     }
+    $validation = Validator::make(Input::all(), User::$rules);
 
-    return 'Failed';
-
+    if ($validation->fails())
+    {
+      return Redirect::back()->withInput()->withErrors($validation->messages());
+    }
   }
+
 
   public function destroy()
   {
