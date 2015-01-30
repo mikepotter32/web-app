@@ -60,7 +60,7 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="/forums">Forums</a></li>
+        <li><a href="/forum">Forums</a></li>
       </ul>
     </div>
 

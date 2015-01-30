@@ -18,7 +18,7 @@ table{
   border-collapse: collapse;
 }
 
-table tr{
+table tr td{
   font-size: 70%;
   border: 1px solid white;
 }
