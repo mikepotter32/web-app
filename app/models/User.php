@@ -7,10 +7,10 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
-	protected $fillable = ['username', 'email', 'password'];
+	protected $fillable = ['username', 'email', 'password']; // allows these fields to be mass assignable
 
 	public static $rules = [
-			'username' => 'required|unique:users|unique:questions|unique:sessions',
+			'username' => 'required|unique:users|unique:questions|unique:sessions', //Makes username required, as well as users, logins and sessions/editing unique
 			'email' => 'required|unique:users|unique:questions|unique:sessions',
 			'password' => 'required'
 		];

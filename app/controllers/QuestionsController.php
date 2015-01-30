@@ -6,10 +6,10 @@ class QuestionsController extends \BaseController {
   {
     if (Input::get('username'))
     {
-      Auth::user()->username = Input::get('username');
-      Auth::user()->push();
+      Auth::user()->username = Input::get('username'); //gets username
+      Auth::user()->push();  //pushes new name to database
 
-      return Redirect::to('/logout');
+      return Redirect::to('/logout'); // forces logout, so they can relogin with new usernmae
     }
     else if (Input::get('email'))
     {

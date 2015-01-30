@@ -9,9 +9,9 @@ class SessionsController extends BaseController {
 
   public function store()
   {
-    if (Auth::attempt(Input::only('username', 'password')))
+    if (Auth::attempt(Input::only('username', 'password'))) // Gets username and password and authenticates
     {
-      return Redirect::to('/');
+      return Redirect::to('/'); //if auth passes redirect to home
     }
     $validation = Validator::make(Input::all(), User::$rules);
 

@@ -16,7 +16,7 @@ class UsersController extends \BaseController {
 
   public function create()
   {
-    if (Auth::check())
+    if (Auth::check()) // if user is already logged in redirect to home
     {
       return Redirect::to('/');
     }
@@ -32,8 +32,8 @@ class UsersController extends \BaseController {
 
     if ($validation->fails())
     {
-      return Redirect::back()->withInput()->withErrors($validation->messages());
-    }
+      return Redirect::back()->withInput()->withErrors($validation->messages()); // sends back with error messages
+    } // This is in case username/email address is allready taken
 
     $user = new User;
     $user->username = Input::get('username');
@@ -41,7 +41,7 @@ class UsersController extends \BaseController {
     $user->password = Hash::make(Input::get('password'));
     $user->save();
 
-    return Redirect::to('/login');
+    return Redirect::to('/login'); // creates user, then redirect to login page
   }
 
   public function about()
@@ -61,7 +61,7 @@ class UsersController extends \BaseController {
 
   public function profile()
   {
-    if (Auth::check())
+    if (Auth::check()) // checks to see if user is logged in, if they are they can see their profile page
       return View::make('users.profile');
     else
       return Redirect::to('/login');
