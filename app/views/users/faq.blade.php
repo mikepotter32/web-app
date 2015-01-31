@@ -43,7 +43,7 @@
 
 
 
-      <p> Edit your profile <a href="/edit">here</a>.</p>
+      <p> Edit your profile <a href="/profile">here</a>.</p>
     </li>
   </ul>
 
