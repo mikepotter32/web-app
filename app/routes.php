@@ -13,6 +13,6 @@ Route::get('/logout', 'SessionsController@destroy');
 Route::resource('sessions', 'SessionsController');
 
 Route::resource('questions', 'QuestionsController');
-Route::get('username', 'QuestionsController@username');
+Route::get('/username', 'QuestionsController@username');
 Route::get('/email', 'QuestionsController@email');
 Route::get('/password', 'QuestionsController@password');

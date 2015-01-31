@@ -9,10 +9,16 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	protected $fillable = ['username', 'email', 'password']; // allows these fields to be mass assignable
 
+	public static $usernameRules = ['username' => 'required|unique:users|min:2|max:25'];
+
+	public static $emailRules = ['email' => 'required|unique:users'];
+
+	public static $passwordRules = ['password' => 'required|min:5']:
+
 	public static $rules = [
-			'username' => 'required|unique:users|unique:questions|unique:sessions', //Makes username required, as well as users, logins and sessions/editing unique
-			'email' => 'required|unique:users|unique:questions|unique:sessions',
-			'password' => 'required'
+			'username' => 'required|unique:users|min:2|max:25', //Makes username required, as well as users, logins and sessions/editing unique
+			'email' => 'required|unique:users',
+			'password' => 'required|min:5'
 		];
 
 	public $errors;
@@ -33,9 +39,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
-	public function isValid()
+	public function isValid($data)
 	{
-		$validation = Validator::make($this->attributes, static::$rules);
+		$validation = Validator::make($data, static::$rules);
 
 		if ($validation->passes())
 		{

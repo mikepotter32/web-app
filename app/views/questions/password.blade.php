@@ -7,6 +7,7 @@
   <div>
     {{ Form::label('password', 'New Password: ') }}
     {{ Form::password('password') }}
+    {{ $errors->first('password') }}
   </div>
 
   <div> {{ Form::submit('Change Password') }} </div>

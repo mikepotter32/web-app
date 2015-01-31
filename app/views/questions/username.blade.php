@@ -7,6 +7,7 @@
       <div>
         {{ Form::label('username', 'New Username: ') }}
         {{ Form::text('username') }}
+        {{ $errors->first('username') }}
       </div>
 
       <div> {{ Form::submit('Change Username') }} </div>

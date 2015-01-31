@@ -7,6 +7,7 @@
   <div>
     {{ Form::label('email', 'New Email: ') }}
     {{ Form::email('email') }}
+    {{ $errors->first('email') }}
   </div>
 
   <div> {{ Form::submit('Change Email') }} </div>

@@ -111,6 +111,10 @@ body {
 
 #content{
   color: #fff;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
 }
 
 #titles{
@@ -137,9 +141,12 @@ body {
   text-decoration: none;
 }
 
+#change input label{
+  vertical-align: middle;
+  border:1px solid white;
+}
+
 #change{
   width:100%;
-  float:center;
-  padding: 50px;
-  padding-top: 200px;
+  height:50px
 }
