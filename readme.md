@@ -6,4 +6,8 @@ password. There are also some trivial news about metal.
 clone repository to your local directory
 
 1. Run composer install
-2. 
+2. create database named webapp
+3. run php artisan migrate --force
+4. run php artisan serve
+5. Open a browser and navigate to localhost:8000
+6. Enjoy!
